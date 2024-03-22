@@ -59,27 +59,27 @@ jobs:
           name: layers-zip
           path: ${{ env.ZIP_NAME }}
 
-  deploy_lambda_layer:
-    name: Deploy lambda layer
-    needs: create-zip
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  # deploy_lambda_layer:
+  #   name: Deploy lambda layer
+  #   needs: create-zip
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: layers-zip
-          path: ${{ env.TFE_DIR }}
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: layers-zip
+  #         path: ${{ env.TFE_DIR }}
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-          terraform_version: '1.6.3'
+  #     - name: Setup Terraform
+  #       uses: hashicorp/setup-terraform@v2
+  #       with:
+  #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+  #         terraform_version: '1.6.3'
 
-      - name: Deploy with Terraform
-        run: |
-          terraform init
-          terraform apply -auto-approve
-        working-directory: ${{ env.TFE_DIR }}
+  #     - name: Deploy with Terraform
+  #       run: |
+  #         terraform init
+  #         terraform apply -auto-approve
+  #       working-directory: ${{ env.TFE_DIR }}
