@@ -1,7 +1,7 @@
 {
     "include": [
-        {"name": "documents38.txt"},
-        {"name": "python38-toolkit.txt"}
+        {"name": "documents38.txt", "version": "3.8"},
+        {"name": "python38-toolkit.txt", "version": "3.8"}
         
     ]
 }
