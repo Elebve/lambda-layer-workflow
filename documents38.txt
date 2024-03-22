@@ -1,0 +1,5 @@
+reportlab==4.1.0
+docxtpl==0.11.2
+PyPDF2==2.11.2
+num2words==0.5.12
+pdfrw2==0.5.0

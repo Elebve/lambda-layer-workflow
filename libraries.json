@@ -1,9 +1,5 @@
 {
     "include": [
-        {"name": "reportlab", "version": "4.1.0"},
-        {"name": "docxtpl", "version": "0.11.2"},
-        {"name": "PyPDF2", "version": "2.11.2"},
-        {"name": "num2words", "version": "0.5.12"},
-        {"name": "pdfrw2", "version": "0.5.0"}
+        {"name": "documents38", "version": "4.1.0"}
     ]
 }
