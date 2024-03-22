@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p lambda_layers/python/lib/python${LIBRARY_VERSION}/site-packages
           pip3 install -r ${REQUIREMENTS_NAME}.txt -t lambda_layers/python/lib/python${LIBRARY_VERSION}/site-packages
-          zip -r $ZIP_NAME lambda_layers/
+          zip -r $ZIP_NAME lambda_layers/python
 
       - name: Upload Library Zip
         uses: actions/upload-artifact@v3
