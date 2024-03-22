@@ -1,7 +1,11 @@
 {
     "include": [
         {"name": "documents38", "version": "3.8"},
-        {"name": "python38-toolkit", "version": "3.8"}
+        {"name": "python38-toolkit", "version": "3.8"},
+        {"name": "athena-tools-38", "version": "3.8"},
+        {"name": "db-tools-38", "version": "3.8"},
+        {"name": "cryptography38", "version": "3.8"}
+        
         
     ]
 }
