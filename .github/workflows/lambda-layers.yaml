@@ -49,9 +49,9 @@ jobs:
 
       - name: Install Python Library and Zip
         run: |
-          mkdir -p image/python/lib/python${LIBRARY_VERSION}/site-packages
-          pip3 install -r ${REQUIREMENTS_NAME}.txt -t image/python/lib/python${LIBRARY_VERSION}/site-packages
-          zip -r $ZIP_NAME image/python
+          mkdir -p python/lib/python${LIBRARY_VERSION}/site-packages
+          pip3 install -r ${REQUIREMENTS_NAME}.txt -t python/lib/python${LIBRARY_VERSION}/site-packages
+          zip -r $ZIP_NAME python
 
       - name: Upload Library Zip
         uses: actions/upload-artifact@v3
@@ -59,27 +59,27 @@ jobs:
           name: layers-zip
           path: ${{ env.ZIP_NAME }}
 
-  deploy_lambda_layer:
-    name: Deploy lambda layer
-    needs: create-zip
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  # deploy_lambda_layer:
+  #   name: Deploy lambda layer
+  #   needs: create-zip
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: layers-zip
-          path: ${{ env.TFE_DIR }}
-  
-  #     - name: Setup Terraform
-  #       uses: hashicorp/setup-terraform@v2
+  #     - uses: actions/download-artifact@v3
   #       with:
-  #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-  #         terraform_version: '1.6.3'
+  #         name: layers-zip
+  #         path: ${{ env.TFE_DIR }}
+  
+  # #     - name: Setup Terraform
+  # #       uses: hashicorp/setup-terraform@v2
+  # #       with:
+  # #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+  # #         terraform_version: '1.6.3'
 
-  #     - name: Deploy with Terraform
-  #       run: |
-  #         terraform init
-  #         terraform apply -auto-approve
-  #       working-directory: ${{ env.TFE_DIR }}
+  # #     - name: Deploy with Terraform
+  # #       run: |
+  # #         terraform init
+  # #         terraform apply -auto-approve
+  # #       working-directory: ${{ env.TFE_DIR }}
