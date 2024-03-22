@@ -50,12 +50,12 @@ jobs:
       - name: Install Python Library and Zip
         run: |
           mkdir -p lambda_layers/python/lib/python${LIBRARY_VERSION}/site-packages
-          pip3 install -r ${REQUIREMENTS_NAME} -t lambda_layers/python/lib/python${LIBRARY_VERSION}/site-packages
+          pip3 install -r ${REQUIREMENTS_NAME}.txt -t lambda_layers/python/lib/python${LIBRARY_VERSION}/site-packages
           zip -r $ZIP_NAME lambda_layers/
 
       - name: Upload Library Zip
         uses: actions/upload-artifact@v3
-        with:
+        with: 
           name: layers-zip
           path: ${{ env.ZIP_NAME }}
 
