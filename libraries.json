@@ -1,5 +1,6 @@
 {
     "include": [
+        {"name": "soap-toolkit", "version": "3.8"},
         {"name": "athena-tools-38", "version": "3.8"},
         {"name": "azure-api-38", "version": "3.8"},
         {"name": "cryptography38", "version": "3.8"},
@@ -10,7 +11,6 @@
         {"name": "python38-toolkit", "version": "3.8"},
         {"name": "python38-toolkit-lite", "version": "3.8"},
         {"name": "slack-sdk38", "version": "3.8"},
-        {"name": "soap-toolkit", "version": "3.8"},
         {"name": "storage-api", "version": "3.8"}
     ]
 }
