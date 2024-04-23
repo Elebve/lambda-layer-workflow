@@ -1,6 +1,7 @@
 {
     "include": [
         {"name": "python39-toolkit", "version": "3.9"},
+        {"name": "google-drive-39", "version": "3.9"},
         {"name": "python39-toolkit-lite", "version": "3.9"}
     ]
 }
