@@ -1,4 +1,4 @@
-name: Deploy Layers v2
+name: Deploy Layers python 3.9
 
 on:
   push:
