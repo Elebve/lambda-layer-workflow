@@ -10,6 +10,7 @@
         {"name": "finantial38", "version": "3.8"},
         {"name": "python38-toolkit", "version": "3.8"},
         {"name": "python38-toolkit-lite", "version": "3.8"},
+        {"name": "python38-requests", "version": "3.8"},
         {"name": "slack-sdk38", "version": "3.8"},
         {"name": "storage-api", "version": "3.8"}
     ]
