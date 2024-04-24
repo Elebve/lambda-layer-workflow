@@ -5,6 +5,7 @@
         {"name": "python39-xray-toolkit", "version": "3.9"},
         {"name": "python39-cryptography", "version": "3.9"},
         {"name": "python39-db-tools", "version": "3.9"},
+        {"name": "python39-slack-sdk", "version": "3.9"},
         {"name": "python39-toolkit-lite", "version": "3.9"}
         
     ]
