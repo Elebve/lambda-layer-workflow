@@ -7,6 +7,7 @@
         {"name": "python39-db-tools", "version": "3.9"},
         {"name": "python39-slack-sdk", "version": "3.9"},
         {"name": "python39-documents", "version": "3.9"},
+        {"name": "python39-requests", "version": "3.9"},
         {"name": "python39-toolkit-lite", "version": "3.9"}
         
     ]
