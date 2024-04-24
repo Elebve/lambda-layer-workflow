@@ -51,7 +51,7 @@ jobs:
         run: |
           pip3 install --upgrade pip
           mkdir -p python/
-          pip3 install -r ${REQUIREMENTS_NAME}.txt -t python/ --platform manylinux2014_x86_64 --only-binary=:all: --python 3.9
+          pip3 install -r ${REQUIREMENTS_NAME}.txt -t python/ --platform manylinux2014_x86_64 --only-binary=:all:
           zip -r $ZIP_NAME python/
 
       - name: Upload Library Zip
