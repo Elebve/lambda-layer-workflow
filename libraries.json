@@ -7,6 +7,8 @@
         {"name": "database_connectors38", "version": "3.8"},
         {"name": "db-tools-38", "version": "3.8"},
         {"name": "documents38", "version": "3.8"},
+        {"name": "python38-documents", "version": "3.8"},
+        
         {"name": "finantial38", "version": "3.8"},
         {"name": "python38-toolkit", "version": "3.8"},
         {"name": "python38-toolkit-lite", "version": "3.8"},
