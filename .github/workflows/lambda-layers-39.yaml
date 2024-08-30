@@ -4,11 +4,11 @@ on:
   push:
 
 env:
-  AWS_REGION: "us-west-2"
+  AWS_REGION: "us-east-1"
   LIBRARY_JSON: libraries39.json
   PYTHON_VERSION: "3.9"
   TFE_DIR: layers
-  TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+
 jobs:
   configure:
     runs-on: ubuntu-latest
@@ -46,14 +46,14 @@ jobs:
           echo "REQUIREMENTS_NAME=${{ matrix.name }}" >> $GITHUB_ENV
           echo "LIBRARY_VERSION=${{ matrix.version }}" >> $GITHUB_ENV
           echo "ZIP_NAME=${{ matrix.name }}.zip" >> $GITHUB_ENV
+      - name: Generate python39-atria-base.txt with token
+        run: |
+          cp python39-atria-base.txt temp_requirements.txt
+          sed -i "s|git+https://github.com/Elebve/lambda-layer-workflow.git|git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git|g" temp_requirements.txt
 
       - name: Install Python Library and Zip
         run: |
           mkdir -p python/
-          # Solo reemplaza la URL si REQUIREMENTS_NAME es python39-atria-base.txt
-          if [ "${REQUIREMENTS_NAME}" = "python39-atria-base.txt" ]; then
-            sed -i "s|git+https://github.com/Elebve/lambda-layer-workflow.git|git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git|g" ${REQUIREMENTS_NAME}.txt
-          fi
           pip3 install -r ${REQUIREMENTS_NAME}.txt -t python/
           zip -r $ZIP_NAME python/
 
