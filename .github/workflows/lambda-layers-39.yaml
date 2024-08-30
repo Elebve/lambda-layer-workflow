@@ -48,7 +48,7 @@ jobs:
           echo "ZIP_NAME=${{ matrix.name }}.zip" >> $GITHUB_ENV
       - name: Generate python39-atria-base.txt with token
         run: |
-          echo "git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git" > python39-atria-base.txt
+          echo "git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/models-atria.git" > python39-atria-base.txt
           cat python39-atria-base.txt  # Verifica el contenido generado
       - name: Install Python Library and Zip
         run: |
