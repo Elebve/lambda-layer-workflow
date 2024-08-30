@@ -4,10 +4,11 @@ on:
   push:
 
 env:
-  AWS_REGION: "us-east-1"
+  AWS_REGION: "us-west-2"
   LIBRARY_JSON: libraries39.json
   PYTHON_VERSION: "3.9"
   TFE_DIR: layers
+  
 
 jobs:
   configure:
@@ -48,7 +49,7 @@ jobs:
           echo "ZIP_NAME=${{ matrix.name }}.zip" >> $GITHUB_ENV
       - name: Generate python39-atria-base.txt with token
         run: |
-          echo "git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/models-atria.git" > python39-atria-base.txt
+          echo "git+https://desarrollo-atria:${{ secrets.TOKEN_GITHUB }}@github.com/Elebve/models-atria.git" > python39-atria-base.txt
           cat python39-atria-base.txt  # Verifica el contenido generado
       - name: Install Python Library and Zip
         run: |
