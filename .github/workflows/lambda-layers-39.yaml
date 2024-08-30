@@ -49,7 +49,6 @@ jobs:
 
       - name: Install Python Library and Zip
         run: |
-          pip3 install --upgrade pip
           mkdir -p python/
           # Solo reemplaza la URL si REQUIREMENTS_NAME es python39-atria-base.txt
           if [ "${REQUIREMENTS_NAME}" = "python39-atria-base.txt" ]; then
