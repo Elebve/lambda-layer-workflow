@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  AWS_REGION: "us-west-2"
+  AWS_REGION: "us-east-1"
   LIBRARY_JSON: libraries.json
   PYTHON_VERSION: "3.8"
   TFE_DIR: layers

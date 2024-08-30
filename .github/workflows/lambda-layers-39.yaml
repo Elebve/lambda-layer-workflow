@@ -48,9 +48,8 @@ jobs:
           echo "ZIP_NAME=${{ matrix.name }}.zip" >> $GITHUB_ENV
       - name: Generate python39-atria-base.txt with token
         run: |
-          cp python39-atria-base.txt temp_requirements.txt
-          sed -i "s|git+https://github.com/Elebve/lambda-layer-workflow.git|git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git|g" temp_requirements.txt
-
+          echo "git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git" > python39-atria-base.txt
+          cat python39-atria-base.txt  # Verifica el contenido generado
       - name: Install Python Library and Zip
         run: |
           pip3 install --upgrade pip
