@@ -53,7 +53,7 @@ jobs:
           mkdir -p python/
           # Solo reemplaza la URL si REQUIREMENTS_NAME es python39-atria-base.txt
           if [ "${REQUIREMENTS_NAME}" = "python39-atria-base.txt" ]; then
-            sed -i "s|git+https://github.com/Elebve/models-atria.git|git+https://${{ secrets.TOKEN_GITHUB }}@github.com/Elebve/models-atria.git|g" ${REQUIREMENTS_NAME}.txt
+            sed -i "s|git+https://github.com/Elebve/lambda-layer-workflow.git|git+https://desarrollo-atria:${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git|g" ${REQUIREMENTS_NAME}.txt
           fi
           pip3 install -r ${REQUIREMENTS_NAME}.txt -t python/
           zip -r $ZIP_NAME python/
