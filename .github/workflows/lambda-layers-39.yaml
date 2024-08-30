@@ -8,7 +8,7 @@ env:
   LIBRARY_JSON: libraries39.json
   PYTHON_VERSION: "3.9"
   TFE_DIR: layers
-
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   configure:
     runs-on: ubuntu-latest
@@ -51,6 +51,10 @@ jobs:
         run: |
           pip3 install --upgrade pip
           mkdir -p python/
+          # Solo reemplaza la URL si REQUIREMENTS_NAME es python39-atria-base.txt
+          if [ "${REQUIREMENTS_NAME}" = "python39-atria-base.txt" ]; then
+            sed -i "s|git+https://github.com/Elebve/lambda-layer-workflow.git|git+https://${{ secrets.GITHUB_TOKEN }}@github.com/Elebve/lambda-layer-workflow.git|g" ${REQUIREMENTS_NAME}.txt
+          fi
           pip3 install -r ${REQUIREMENTS_NAME}.txt -t python/
           zip -r $ZIP_NAME python/
 
