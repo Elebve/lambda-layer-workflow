@@ -8,7 +8,7 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
-boto3 = "^1.26.33"
+boto3 = "^1.35.10"
 aws-xray-sdk = "^2.13.0"
 
 [tool.poetry.group.dev.dependencies]
